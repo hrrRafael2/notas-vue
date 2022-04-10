@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title> Eventos </title>
+</head>
+<body>
+    <div id="app">
+        
+    </div>
+    
+    <script>
+        // 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
+        const vueMain = Vue.createApp({
+            data() {
+                return {
+                    counter: 0
+                };
+            },
+            methods: {
+                increment() {
+                    this.counter++;
+                },
+                decrement() {
+                    this.counter--;
+                }
+
+            },
+            template:`  <h1>{{ counter }}</h1>
+                        <button class="btn-mas" v-on:click="increment">+1</button>
+                        <button class="btn-mas menos" v-on:click="decrement">-1</button>`,
+        }).mount("#app");
+    </script>
+    <style scoped>
+        .btn-mas{
+            background-color: red;
+            width: 120px;
+            padding: 10px;
+        }
+         .menos{
+            background-color: blue;
+        }
+    </style>
+</body>
+</html>
+
