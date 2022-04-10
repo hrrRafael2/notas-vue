@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+    </div>
+
+
+    <script>
+         /*
+            La interpolación de datos hace referencia a la forma como se trabaja 
+            con variables dentro de los componentes Vue. 
+            Estas variables utilizan la sintaxis de doble corchete {{ text }}
+         */
+         const vm = Vue.createApp({
+             data() {
+                 return {
+                        // interpolacion de datos
+                     text: [  ] ,
+                     titulo: 'Iniciando en vue...',
+                     htmlH2: "<h2> Soy un h2 en vue </h2>"
+                 }
+             }, // el template podemos agregar codigo html
+             // v-text , nos permite agregar texto a nuestra etiqueta 
+             // a esto se le conoce como directica en vue
+
+             /* la directiva v-one , solo nos permite actualizar una ves es decir si
+                cambiamos la propiedad titulo por Hola mundo , el elemento a , no se renderizara.
+             */
+
+             template: ` <a v-once v-text=" titulo ">  </a> 
+                         <b v-html="htmlH2">  </b>
+             `
+                // la direccion v-html nos permite insertar html desder el return , como etiqueta
+                // no utilizar html como input de usuario , puede haber problemas de seguridad 
+         }).mount("#app") // objeto que contiene toda la app
+    </script>
+
+    <style scoped>
+        h1{
+            text-align: center;
+        }
+    </style>
+
+</body>
+</html>
